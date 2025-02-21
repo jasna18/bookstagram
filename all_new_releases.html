@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/stylenew.css">
+    <link rel="stylesheet" href="assets/css/styleall.css">
     <link rel="stylesheet" href="assets/css/styleslider.css">
-    <link rel="stylesheet" href="assets/css/cardstyle.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <!--bootstrap css-->
@@ -120,9 +119,29 @@
         </nav> 
      </header>   
      <!-- slider -->
-     <div class="slideshow-container">
-        <div class="content mt-4">
-    <h3 class="new">New Releases</h3>
+     <div class="container">
+        <div class="slideshow-container border slider-spacing">
+         <div class="mySlides fade">
+           <img src= "assets/images/banner-1.jpg"  style="width:100%" height="100%" alt="1">
+         </div>
+   
+         <div class="mySlides fade">
+           <img src="assets/images/banner-2.jpg" style="width:100%" height="100%"  alt="2">
+         </div>
+   
+         <div class="mySlides fade">
+           <img src="assets/images/banner-4.jpg" style="width:100%" height="100%"  alt="3">
+         </div>
+   
+         <div style="text-align:center;padding-top:10px;">
+           <span class="dot"></span> 
+           <span class="dot"></span> 
+           <span class="dot"></span> 
+         </div>
+      </div>
+
+    <div class="content mt-4">
+      <h3 class="new">New Releases</h3>
         <div class="row">
             <div class="column">
                 <div class="card">
@@ -247,14 +266,21 @@
             </div>
       <!-- row -->
       </div>
+      <nav class="pagination-container">
+        <ul class="pagination">
+            <li class="page-item disabled" id="prev-btn"><a class="page-link" href="#">Previous</a></li>
+            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">4</a></li>
+            <li class="page-item"><a class="page-link" href="#">5</a></li>
+            <li class="page-item" id="next-btn"><a class="page-link" href="#">Next</a></li>
+        </ul>
+    </nav>
  <!-- content -->
  </div>
-    <!-- slider contaimer end -->
+    <!--  container end -->
 </div>    
-<!-- slider end -->
-<!-- body -->
-
- <!-- end -->
  <footer class="footer">
     <div class="footer-container">
         <p>&copy; 2024 My Website. All Rights Reserved.</p>
@@ -268,6 +294,40 @@
 </footer>
     </body>
     </main>
+    <script>
+        let currentPage = 1;
+        const totalPages = 5;
+        const content = document.getElementById('content');
+        const pageItems = document.querySelectorAll('.page-item');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+
+        function updateContent() {
+            content.textContent = `Page ${currentPage} Content`;
+        }
+
+        function updatePagination() {
+            pageItems.forEach(item => item.classList.remove('active'));
+            pageItems[currentPage].classList.add('active');
+            prevBtn.classList.toggle('disabled', currentPage === 1);
+            nextBtn.classList.toggle('disabled', currentPage === totalPages);
+        }
+
+        document.querySelectorAll('.page-item a').forEach((link, index) => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                if (index === 0 && currentPage > 1) {
+                    currentPage--;
+                } else if (index === totalPages + 1 && currentPage < totalPages) {
+                    currentPage++;
+                } else if (index > 0 && index <= totalPages) {
+                    currentPage = index;
+                }
+                updateContent();
+                updatePagination();
+            });
+        });
+    </script>
 <script>
 function openNav() 
 {
@@ -278,6 +338,28 @@ function closeNav() {
   document.getElementById("myNav").style.width = "0%"
 }
 </script>
+<script>
+    let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" actives", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " actives";
+  setTimeout(showSlides, 1580); // Change image every 2 seconds
+}
+    </script>
+
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
