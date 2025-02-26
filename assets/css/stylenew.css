@@ -210,4 +210,19 @@ html {
     background-color:#770536;
     color: #f9f9f9;
     }
-    
+    .filter-container {
+      max-width: 250px;
+  }
+  .filter-content {
+      display: none;
+  }
+  .toggle-arrow {
+      cursor: pointer;
+      float: right;
+  }
+  .toggle-heading {
+      margin-top: 15px;
+      padding-top: 10px;
+      border-top: 1px solid #ddd;
+      cursor: pointer;
+  }
