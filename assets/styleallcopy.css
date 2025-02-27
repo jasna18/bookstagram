@@ -14,16 +14,12 @@ html {
     overflow-x: hidden; /* Prevent horizontal scrolling */
   }
   .container {
-    flex:1;
+    flex: 1; /* Takes up all available space */
     width: 100%;
     min-height:100vh;
   }
-  .content{
-    display:flex;
-    flex-wrap: wrap;
-  }
- .filters {
-    flex:1;
+
+  .filters {
     margin-right:50px;
     width: 20%;
     background-color: #f4f4f4;
@@ -33,12 +29,11 @@ html {
 }
   /* Float four columns side by side */
   .column {
-      /* float: left; */
-      width: 20%;
+      float: left;
+      width: 25%;
       padding: 0 10px;
-      margin-bottom:50px;
+      margin-bottom:20px;
       box-sizing:border-box;
-  
     }
     .top-row, .second-row {
       display: flex;
@@ -48,20 +43,41 @@ html {
     }
     /* Remove extra left and right margins, due to padding */
     .row {
-      flex:3;
-      /* width:70%; */
       margin: 0 -5px; 
     }
   
     /* Clear floats after the columns */
     .row:after {
-
       content: "";
-      /* display: table; */
+      display: table;
       clear: both;
       box-sizing:border-box;
     }
-
+    /* Remove extra left and right margins, due to padding */
+    .row {
+      margin: 0 -5px;
+    }
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+      box-sizing:border-box;
+    }
+    .card-img-top {
+      max-width: 100%;
+      height: 150px;
+      border-radius: 5px;
+      padding-top:30px;
+      padding-left: 10px !important;
+      padding-right:10px ;
+      }
+      .card {
+        flex: 0 0 auto;
+        padding: 6px;
+        text-align: center;
+        box-sizing: border-box; 
+      }
     .footer {
       background-color: #770536;/* Dark background color */
       color: #fff;/* White text */
@@ -71,10 +87,9 @@ html {
       margin-top: auto;
     }
     .pagination-container {
-       display: flex;
-      justify-content: center; 
-      /* flex:1; */
-      margin-top: auto;
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
   }
   @media (max-width: 1199px) {
     .column {
@@ -246,7 +261,6 @@ html {
     color: #970747;
     font-size: 25px;
     font-weight: bold;
-    margin-top:20px;
   }
   #view-all-btn {
     border-color: #970747;
@@ -283,24 +297,6 @@ html {
     text-decoration: underline;/* Add underline on hover */
     color: #ff9800; /* Optional hover color */
   }
-  
-  .card-img-top {
-    max-width: 100%;
-    height: 160px;
-    border-radius: 5px;
-    padding-top:30px;
-    padding-left: 10px !important;
-    padding-right:10px ;
-    padding-bottom:0px;
-    }
-    .card {
-      flex: 0 0 auto;
-      display:flex;
-      align-items: center;
-      padding: 6px;
-      text-align: center;
-      box-sizing: border-box; 
-    }
   .card-body {
     margin-top:20px;
   }
@@ -314,7 +310,7 @@ html {
     }
   .btn-cart {
     font-size: 0.9rem;
-    border-radius: 3px;
+    border-radius: 5px;
     cursor: pointer;
     background-color:#770536;
     color: #f9f9f9;
@@ -325,16 +321,28 @@ html {
       padding: 20px;
       margin-right: 20px; /* Space between left and center div */
   }
-  .toggle-arrow {
-    cursor: pointer;
-    float: right;
+  .wrappers {
+  
+    display: flex;
+    /* flex-direction: column;  */
+    /* Stack filter on top of the container */
+    align-items: flex-start; /* Align to the left */
+    padding: 240px 20px 20px 60px; /* More space on left, top, and bottom */
+    background-color: #e6ebf0; /* Light background */
+    min-height: 100vh; /* Full viewport height */
+    width:250px;
 }
-.toggle-heading {
-    margin-top: 15px;
-    padding-top: 10px;
-    border-top: 1px solid #ddd;
-    cursor: pointer;
-}
-.filter-content {
-  display: none;
+
+/* Filter Box */
+.filter {
+  float:left;
+    width: 100%; /* Takes full width of its parent */
+    max-width: 250px; /* Prevents it from becoming too large */
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    border: 1px solid rgb(20, 20, 20);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
 }
