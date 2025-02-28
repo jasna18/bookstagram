@@ -19,6 +19,7 @@ html {
     min-height:100vh;
   }
   .content{
+    /* position: relative; */
     display:flex;
     flex-wrap: wrap;
   }
@@ -71,9 +72,10 @@ html {
       margin-top: auto;
     }
     .pagination-container {
+      /* position: absolute; */
        display: flex;
       justify-content: center; 
-      /* flex:1; */
+      flex:1;
       margin-top: auto;
   }
   @media (max-width: 1199px) {
