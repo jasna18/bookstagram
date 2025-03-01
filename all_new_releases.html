@@ -430,7 +430,7 @@ function closeNav() {
     }
     </script>
     <script>
-    $(document).ready(function() {
+    $(window).on("load", function(){
         $('.author-filter, .publisher-filter, .genre-filter, .price-min, .price-max').on('change keyup', filterBooks);
         filterBooks();
         
