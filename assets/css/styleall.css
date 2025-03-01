@@ -347,3 +347,17 @@ html {
       font-size: 14px;
   }
 }
+.pagination>li>a, .pagination>li>span {
+  /* border-top: none;
+  border-bottom: none; */
+  border:none ;
+}
+
+/* .pagination>li:first-of-type > a {
+ border-left: none;
+}
+
+.pagination>li:last-of-type > a {
+ border-right:none;
+} */
+
