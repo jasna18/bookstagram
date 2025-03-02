@@ -88,11 +88,14 @@ html {
           padding-bottom: 100 !important;
       }
   }
-  @media (max-width: 991px) {
+  @media (max-width: 768px) {
     .column {
         flex: 0 0 50%;
         margin: 0 20;
         padding-bottom: 100 !important;
+    }
+    .filters{
+      display:none !important;
     }
 }
   @media (max-width: 576px) {
