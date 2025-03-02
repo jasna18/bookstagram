@@ -363,4 +363,9 @@ html {
 .pagination .page-link {
   color: black;
 }
-
+.pagination .page-link:hover {
+  color:#770536;
+}
+.page-item.active .page-link {
+  background-color:#7a2a4d !important
+}
