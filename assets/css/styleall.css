@@ -360,4 +360,7 @@ html {
 .pagination>li:last-of-type > a {
  border-right:none;
 } */
+.pagination .page-link {
+  color: black;
+}
 
