@@ -90,7 +90,7 @@ html {
   }
   @media (max-width: 768px) {
     .column {
-        flex: 0 0 50%;
+        flex: 0 0 33.3%;
         margin: 0 20;
         padding-bottom: 100 !important;
     }
