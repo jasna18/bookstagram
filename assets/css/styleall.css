@@ -46,7 +46,7 @@ html {
       height: 40px;
     }
     /* Remove extra left and right margins, due to padding */
-    .row {
+    .row{
       flex:3;
       margin: 0 -5px; 
     }
