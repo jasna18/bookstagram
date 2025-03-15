@@ -105,7 +105,7 @@ html {
         padding-bottom: 50 !important;
     }
   }
-  @media (max-width: 311px) {
+  @media (max-width: 375px) {
     .column {
       width:100%;
         flex: 0 0 100%;
