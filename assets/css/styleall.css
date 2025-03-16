@@ -108,7 +108,7 @@ html {
   @media (max-width: 375px) {
     .column {
       width:100%;
-        flex: 0 0 100%;
+        flex: 0 0 50%;
     }
     .footer-allnew {
       padding: 10px 5px; /* Minimal padding for very small screens */
